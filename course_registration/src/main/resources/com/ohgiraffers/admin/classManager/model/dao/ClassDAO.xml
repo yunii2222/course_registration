@@ -8,6 +8,33 @@
         FROM tb_class
         ORDER BY class_code
     </select>
+    
+    <select id="selectClassByCondition" resultType="ClassDTO">
+        SELECT class_code, class_name, category, class_grade, class_credit, class_status
+        FROM tb_class
+        WHERE
+        <choose>
+            <when test="option == 'classCode'">
+                class_code = #{value}
+            </when>
+            <when test="option == 'className'">
+                class_name LIKE CONCAT('%', #{value}, '%')
+            </when>
+            <when test="option == 'classStatus'">
+                class_status = #{value}
+            </when>
+            <when test="option == 'category'">
+                category LIKE CONCAT('%', #{value}, '%')
+            </when>
+            <when test="option == 'classCredit'">
+                class_credit = #{value}
+            </when>
+            <when test="option == 'classGrade'">
+                class_grade = #{value}
+            </when>
+        </choose>
+        ORDER BY class_code
+    </select>
 
     <insert id="insertClass">
         INSERT INTO tb_class (class_name, category, class_grade, class_credit, class_status)
