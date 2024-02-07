@@ -138,10 +138,17 @@ public class ClassMenu {
         int classGrade = sc.nextInt();
         System.out.println("학점을 입력해주세요.(1~3)");
         System.out.print("=> ");
-        int classCredit = sc.nextInt();
+        sc.nextLine();
+        String classCredit = sc.nextLine();
         System.out.println("수업형태를 입력해주세요. (온라인 or 오프라인)");
         System.out.print("=> ");
         String classStatus = sc.nextLine();
+
+        classDTO.setClassName(className);
+        classDTO.setCategory(category);
+        classDTO.setClassGrade(classGrade);
+        classDTO.setClassCredit(classCredit);
+        classDTO.setClassStatus(classStatus);
 
         return classDTO;
     }
@@ -165,12 +172,19 @@ public class ClassMenu {
         int classGrade = sc.nextInt();
         System.out.println("학점을 입력해주세요.(1~3)");
         System.out.print("=> ");
-        int classCredit = sc.nextInt();
+        sc.nextLine();
+        String classCredit = sc.nextLine();
         System.out.println("수업형태를 입력해주세요. (온라인 or 오프라인)");
         System.out.print("=> ");
         String classStatus = sc.nextLine();
 
         ClassDTO classDTO = new ClassDTO();
+
+        classDTO.setClassName(className);
+        classDTO.setCategory(category);
+        classDTO.setClassGrade(classGrade);
+        classDTO.setClassCredit(classCredit);
+        classDTO.setClassStatus(classStatus);
 
         return classDTO;
     }
