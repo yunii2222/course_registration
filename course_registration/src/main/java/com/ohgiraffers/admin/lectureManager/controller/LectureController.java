@@ -1,4 +1,4 @@
 package com.ohgiraffers.admin.lectureManager.controller;
 
-public class lectureController {
+public class LectureController {
 }

@@ -1,4 +1,4 @@
 package com.ohgiraffers.admin.classManager.view;
 
-public class adminMenu {
+public class AdminPrint {
 }

@@ -1,4 +1,4 @@
 package com.ohgiraffers.student.registManager.view;
 
-public class registPrint {
+public class RegistMenu {
 }
