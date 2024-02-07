@@ -63,6 +63,17 @@ public class ClassService {
     }
 
     public boolean deleteClass(Map<String, String> parameter) {
-        return false;
+        SqlSession sqlSession = getSqlSession();
+        classDAO = sqlSession.getMapper(ClassDAO.class);
+
+        int result = classDAO.deleteClass(parameter);
+        if(result > 0){
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+        sqlSession.close();
+
+        return result > 0;
     }
 }
