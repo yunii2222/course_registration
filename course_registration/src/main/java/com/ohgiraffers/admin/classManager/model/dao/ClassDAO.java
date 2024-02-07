@@ -1,16 +1,18 @@
 package com.ohgiraffers.admin.classManager.model.dao;
 
 import com.ohgiraffers.admin.classManager.model.dto.ClassDTO;
+import com.ohgiraffers.common.SearchCondition;
 
 import java.util.List;
-import java.util.Map;
 
 public interface ClassDAO {
     List<ClassDTO> selectAllClassList();
+
+    List<ClassDTO> selectClassByCondition(SearchCondition searchCondition);
 
     int insertClass(ClassDTO classDTO);
 
     int updateClass(ClassDTO classDTO);
 
-    int deleteClass(Map<String, String> parameter);
+    int deleteClass(int classCode);
 }

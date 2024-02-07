@@ -23,11 +23,11 @@ public class ClassService {
         return classList;
     }
 
-    public List<ClassDTO> selectClassBy() {
+    public List<ClassDTO> selectClassByCondition(SearchCondition searchCondition) {
         SqlSession sqlSession = getSqlSession();
         classDAO = sqlSession.getMapper(ClassDAO.class);
 
-        List<ClassDTO> classList = classDAO.selectAllClassList();
+        List<ClassDTO> classList = classDAO.selectClassByCondition(searchCondition);
 
         sqlSession.close();
         return classList;
@@ -48,7 +48,7 @@ public class ClassService {
         return result > 0;
     }
 
-    public boolean updateClass(ClassDTO classDTO) {
+    public boolean modifyClass(ClassDTO classDTO) {
         SqlSession sqlSession = getSqlSession();
         classDAO = sqlSession.getMapper(ClassDAO.class);
 
@@ -63,11 +63,11 @@ public class ClassService {
         return result > 0;
     }
 
-    public boolean deleteClass(Map<String, String> parameter) {
+    public boolean deleteClass(int classCode) {
         SqlSession sqlSession = getSqlSession();
         classDAO = sqlSession.getMapper(ClassDAO.class);
 
-        int result = classDAO.deleteClass(parameter);
+        int result = classDAO.deleteClass(classCode);
         if(result > 0){
             sqlSession.commit();
         } else {
@@ -76,23 +76,6 @@ public class ClassService {
         sqlSession.close();
 
         return result > 0;
-    }
-
-    public List<ClassDTO> selectClassByCondition(SearchCondition searchCondition) {
-        return null;
-    }
-
-    public boolean addNewClass(ClassDTO classDTO) {
-        return false;
-    }
-
-    public boolean modifyClass(ClassDTO classDTO) {
-        return false;
-    }
-
-
-    public boolean deleteClass(int classCode) {
-        return false;
     }
 
 
