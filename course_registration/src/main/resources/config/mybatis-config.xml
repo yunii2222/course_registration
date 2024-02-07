@@ -11,11 +11,11 @@
 
     <!-- 별칭 지정 -->
     <typeAliases>
-        <typeAlias type="com.ohgiraffers.admin.classManager.model.dao.ClassDAO" alias="ClassDAO"/>
-        <typeAlias type="com.ohgiraffers.admin.lectureManager.model.dao.LectureDAO" alias="LectureDAO"/>
-        <typeAlias type="com.ohgiraffers.admin.professorManager.model.dao.ProfessorDAO" alias="ProfessorDAO"/>
-        <typeAlias type="com.ohgiraffers.admin.studentManager.model.dao.StudentDAO" alias="StudentDAO"/>
-        <typeAlias type="com.ohgiraffers.student.registManager.model.dao.RegistDAO" alias="RegistDAO"/>
+        <typeAlias type="com.ohgiraffers.admin.classManager.model.dto.ClassDTO" alias="ClassDTO"/>
+        <typeAlias type="com.ohgiraffers.admin.lectureManager.model.dto.LectureDTO" alias="LectureDTO"/>
+        <typeAlias type="com.ohgiraffers.admin.professorManager.model.dto.ProfessorDTO" alias="ProfessorDTO"/>
+        <typeAlias type="com.ohgiraffers.admin.studentManager.model.dto.StudentDTO" alias="StudentDTO"/>
+        <typeAlias type="com.ohgiraffers.student.registManager.model.dto.RegistDTO" alias="RegistDTO"/>
     </typeAliases>
 
     <environments default="dev">
@@ -37,7 +37,7 @@
         <mapper class="com.ohgiraffers.admin.lectureManager.model.dao.LectureDAO"/>
         <mapper class="com.ohgiraffers.admin.professorManager.model.dao.ProfessorDAO"/>
         <mapper class="com.ohgiraffers.admin.studentManager.model.dao.StudentDAO"/>
-        <mapper class="com.ohgiraffers.admin.registManager.model.dao.RegistDAO"/>
+        <mapper class="com.ohgiraffers.student.registManager.model.dao.RegistDAO"/>
     </mappers>
 
 </configuration>

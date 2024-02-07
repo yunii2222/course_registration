@@ -64,49 +64,53 @@ public class ClassMenu {
                 sc.nextLine();
                 option = "classCode";
                 System.out.println("조회할 수업 코드를 입력해주세요");
-                System.out.println("=> ");
+                System.out.print("=> ");
                 value = sc.nextLine();
                 break;
             case 2 :
                 sc.nextLine();
                 option = "className";
                 System.out.println("조회할 수업 명을 입력해주세요.");
-                System.out.println("=> ");
+                System.out.print("=> ");
                 value = sc.nextLine();
                 break;
             case 3 :
                 sc.nextLine();
                 option = "classStatus";
                 System.out.println("조회할 수업형태를 입력해주세요. (온라인 or 오프라인)");
-                System.out.println("=> ");
+                System.out.print("=> ");
                 value = sc.nextLine();
                 break;
             case 4 :
                 sc.nextLine();
                 option = "category";
                 System.out.println("조회할 교과구분을 입력해주세요. (전공 or 교양)");
-                System.out.println("=> ");
+                System.out.print("=> ");
                 value = sc.nextLine();
                 break;
             case 5 :
                 sc.nextLine();
                 option = "classCredit";
                 System.out.println("조회할 학점이 몇점짜리인지 입력해주세요. (1~3)");
-                System.out.println("=> ");
+                System.out.print("=> ");
                 value = sc.nextLine();
                 break;
             case 6 :
                 sc.nextLine();
                 option = "classGrade";
                 System.out.println("조회할 학년을 입력해주세요.");
-                System.out.println("=> ");
+                System.out.print("=> ");
                 value = sc.nextLine();
                 break;
             case 0 : System.out.println("========상위 메뉴로 이동합니다.========"); return null;
             default : System.out.println("잘못된 번호입니다. 확인 후 다시 입력해 주세요."); break;
+
         }
 
         SearchCondition searchCondition = new SearchCondition();
+        searchCondition.setOption(option);
+        searchCondition.setValue(value);
+
         return searchCondition;
     }
     /* 조건 선택 end */
@@ -159,10 +163,12 @@ public class ClassMenu {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("===================================");
-        System.out.println("수정할 수업을 입력해주세요");
-        System.out.println("===================================");
+        System.out.println("수정할 수업의 코드를 입력해주세요");
+        System.out.print("=> ");
+        int classCode = sc.nextInt();
         System.out.println("수업 명을 입력해주세요.");
         System.out.print("=> ");
+        sc.nextLine();
         String className = sc.nextLine();
         System.out.println("교과구분을 입력해주세요. (전공 or 교양)");
         System.out.print("=> ");
@@ -180,6 +186,7 @@ public class ClassMenu {
 
         ClassDTO classDTO = new ClassDTO();
 
+        classDTO.setClassCode(classCode);
         classDTO.setClassName(className);
         classDTO.setCategory(category);
         classDTO.setClassGrade(classGrade);

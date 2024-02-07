@@ -50,7 +50,7 @@
             <if test="category != null and category != 'SKIP'">
                 category = #{category},
             </if>
-            <if test="classGrade gt 0 and classGrade != 'SKIP'">
+            <if test="classGrade gt 0">
                 class_grade = #{classGrade},
             </if>
             <if test="classCredit != null and classCredit != 'SKIP'">
