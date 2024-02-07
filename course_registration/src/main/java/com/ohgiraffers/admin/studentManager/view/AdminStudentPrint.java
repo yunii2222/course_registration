@@ -1,4 +1,4 @@
 package com.ohgiraffers.admin.studentManager.view;
 
-public class studentPrint {
+public class AdminStudentPrint {
 }

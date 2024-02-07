@@ -1,6 +1,5 @@
 package com.ohgiraffers.admin.classManager.view;
 
-public class ClassPrint {
 import com.ohgiraffers.admin.classManager.model.dto.ClassDTO;
 import com.ohgiraffers.common.SearchCondition;
 
