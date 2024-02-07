@@ -39,14 +39,7 @@ public class ClassController {
 
     }
 
-    public void addNewClass(Map<String, String> parameter) {
-
-        ClassDTO classDTO = new ClassDTO();
-        classDTO.setClassName(parameter.get("className"));
-        classDTO.setCategory(parameter.get("category"));
-        classDTO.setClassGrade(Integer.parseInt(parameter.get("classGrade")));
-        classDTO.setClassCredit(parameter.get("classCredit"));
-        classDTO.setClassStatus(parameter.get("classStatus"));
+    public void addNewClass(ClassDTO classDTO) {
 
         if(classService.addNewClass(classDTO)){
             classPrint.printSuccessMessage("insert");
@@ -55,14 +48,7 @@ public class ClassController {
         }
     }
 
-    public void modifyClass(Map<String, String> parameter) {
-
-        ClassDTO classDTO = new ClassDTO();
-        classDTO.setClassName(parameter.get("className"));
-        classDTO.setCategory(parameter.get("category"));
-        classDTO.setClassGrade(Integer.parseInt(parameter.get("classGrade")));
-        classDTO.setClassCredit(parameter.get("classCredit"));
-        classDTO.setClassStatus(parameter.get("classStatus"));
+    public void modifyClass(ClassDTO classDTO) {
 
         if(classService.modifyClass(classDTO)){
             classPrint.printSuccessMessage("update");
