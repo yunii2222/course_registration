@@ -15,7 +15,25 @@
     </insert>
 
     <update id="updateClass">
-        UPDATE
+        UPDATE tb_class
+        <set>
+            <if test="className != null and className != 'SKIP'">
+                class_name = #{className},
+            </if>
+            <if test="category != null and category != 'SKIP'">
+                category = #{category},
+            </if>
+            <if test="classGrade gt 0 and classGrade != 'SKIP'">
+                class_grade = #{classGrade},
+            </if>
+            <if test="classCredit != null and classCredit != 'SKIP'">
+                class_credit = #{classCredit},
+            </if>
+            <if test="classStatus != null and classStatus != 'SKIP'">
+                class_status = #{classStatus}
+            </if>
+        </set>
+        WHERE class_code =#{classCode}
     </update>
 
     <delete id="deleteClass">
