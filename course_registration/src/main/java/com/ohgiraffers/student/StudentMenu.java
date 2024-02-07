@@ -1,4 +1,4 @@
 package com.ohgiraffers.student;
 
-public class studentMenu {
+public class StudentMenu {
 }
