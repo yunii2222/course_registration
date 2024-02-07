@@ -9,8 +9,15 @@ import java.util.List;
 import static com.ohgiraffers.common.Template.getSqlSession;
 
 public class ClassService {
+    private ClassDAO classDAO;
 
     public List<ClassDTO> selectAllClassList() {
-        return null;
+        SqlSession sqlSession = getSqlSession();
+        classDAO = sqlSession.getMapper(ClassDAO.class);
+
+        List<ClassDTO> classList = classDAO.selectAllClassList();
+
+        sqlSession.close();
+        return classList;
     }
 }
