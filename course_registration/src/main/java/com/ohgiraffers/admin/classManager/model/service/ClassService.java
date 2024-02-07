@@ -2,6 +2,7 @@ package com.ohgiraffers.admin.classManager.model.service;
 
 import com.ohgiraffers.admin.classManager.model.dao.ClassDAO;
 import com.ohgiraffers.admin.classManager.model.dto.ClassDTO;
+import com.ohgiraffers.common.SearchCondition;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
@@ -76,4 +77,23 @@ public class ClassService {
 
         return result > 0;
     }
+
+    public List<ClassDTO> selectClassByCondition(SearchCondition searchCondition) {
+        return null;
+    }
+
+    public boolean addNewClass(ClassDTO classDTO) {
+        return false;
+    }
+
+    public boolean modifyClass(ClassDTO classDTO) {
+        return false;
+    }
+
+
+    public boolean deleteClass(int classCode) {
+        return false;
+    }
+
+
 }
