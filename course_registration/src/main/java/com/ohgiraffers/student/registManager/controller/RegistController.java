@@ -29,7 +29,7 @@ public class RegistController {
     public void addNewRegist(int i, AdminStudentDTO student) {
     }
 
-    public void selectRegistByStudent(AdminStudentDTO student) {
+    public void selectLectureByStudent(AdminStudentDTO student) {
     }
 
     public void deleteRegist(int i, AdminStudentDTO student) {

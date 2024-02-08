@@ -23,8 +23,8 @@
             <when test="option == 'studentName'">
                 student_name LIKE CONCAT('%', #{value}, '%')
             </when>
-            <when test="option == 'subjectName'">
-                subject_name LIKE CONCAT('%', #{value}, '%')
+            <when test="option == 'majorSubject'">
+                major_subject LIKE CONCAT('%', #{value}, '%')
             </when>
             <when test="option == 'studentStatus'">
                 student_status = #{value}
