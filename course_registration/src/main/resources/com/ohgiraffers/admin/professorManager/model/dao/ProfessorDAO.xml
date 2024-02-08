@@ -17,11 +17,11 @@
         </if>
         WHERE
         <choose>
-            <when test="option == 'professorCode'">
-                professor_code = #{value}
-            </when>
             <when test="option == 'professorName'">
                 professor_name LIKE CONCAT('%', #{value}, '%')
+            </when>
+            <when test="option == 'professorPhone'">
+                professor_phone = #{value}
             </when>
             <when test="option == 'subjectName'">
                 subject_name LIKE CONCAT('%', #{value}, '%')
