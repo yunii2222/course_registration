@@ -1,12 +1,12 @@
 package com.ohgiraffers.student.login.view;
 
-import com.ohgiraffers.admin.studentManager.model.dto.StudentDTO;
+import com.ohgiraffers.admin.studentManager.model.dto.AdminStudentDTO;
 
 import java.util.Map;
 
 public class LoginPrint {
 
-    public void printSuccessMessage(StudentDTO student) {
+    public void printSuccessMessage(AdminStudentDTO student) {
         System.out.println("로그인에 성공하였습니다.");
         System.out.println(student.getStudentName() + "님, 환영합니다.");
     }

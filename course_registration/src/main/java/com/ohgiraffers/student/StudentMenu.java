@@ -1,6 +1,6 @@
 package com.ohgiraffers.student;
 
-import com.ohgiraffers.admin.studentManager.model.dto.StudentDTO;
+import com.ohgiraffers.admin.studentManager.model.dto.AdminStudentDTO;
 import com.ohgiraffers.student.login.controller.LoginController;
 import com.ohgiraffers.student.registManager.view.RegistMenu;
 
@@ -12,7 +12,7 @@ public class StudentMenu {
 
     public void studentDisplayMenu() {
         Scanner sc = new Scanner(System.in);
-        StudentDTO student = new LoginController().studentLogIn(getIdAndPassword());
+        AdminStudentDTO student = new LoginController().studentLogIn(getIdAndPassword());
         boolean isLogin = student != null;
 
         if(isLogin) {

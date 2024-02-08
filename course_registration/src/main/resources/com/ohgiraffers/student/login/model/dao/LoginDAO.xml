@@ -3,7 +3,7 @@
 
 <mapper namespace="com.ohgiraffers.student.login.model.dao.LoginDAO">
 
-    <select id="selectStudentByIdAndPassword" resultType="StudentDTO">
+    <select id="selectStudentByIdAndPassword" resultType="AdminStudentDTO">
         SELECT student_code, student_name, student_phone, student_grade, password, student_status, major_subject, tutor_professor
         FROM tb_student
         WHERE student_code = #{studentCode}

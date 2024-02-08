@@ -1,7 +1,6 @@
 package com.ohgiraffers.student.registManager.view;
 
-import com.ohgiraffers.admin.classManager.controller.ClassController;
-import com.ohgiraffers.admin.studentManager.model.dto.StudentDTO;
+import com.ohgiraffers.admin.studentManager.model.dto.AdminStudentDTO;
 import com.ohgiraffers.student.registManager.controller.RegistController;
 
 import java.util.Map;
@@ -9,7 +8,7 @@ import java.util.Scanner;
 
 public class RegistMenu {
 
-    public void registDisplayMenu(StudentDTO student) {
+    public void registDisplayMenu(AdminStudentDTO student) {
         /* 1. 수강신청
              - 전체조회 혹은 조건조회해서 신청하면 RegistDTO가 insert된다
         * 2. 신청한 강의 목록 조회 (매개변수로 전달된 StudentDTO 객체를 통해 List<RegistDTO>를 받아오게 될 것)
@@ -28,6 +27,7 @@ public class RegistMenu {
                 System.out.println("========== 수업 관리 메뉴 =========");
                 System.out.println("1.전체 수업 조회");
                 System.out.println("2.조건 수업 조회");
+                System.out.println("3.이전 메뉴로");
                 System.out.println("원하시는 관리 메뉴 번호를 선택해주세요");
                 System.out.print("=> ");
 
@@ -36,7 +36,7 @@ public class RegistMenu {
                 switch (selectMenu){
                     case 1 : break;
                     case 2 : break;
-                    case 6 : System.out.println("========상위 메뉴로 이동합니다.========"); return;
+                    case 63: System.out.println("========상위 메뉴로 이동합니다.========"); return;
                     default : System.out.println("잘못된 번호입니다. 확인 후 다시 입력해 주세요."); break;
                 }
             } while (true);
