@@ -59,7 +59,7 @@ public class StudentController {
 
     public void deleteStudent(Map<String, String> parameter) {
 
-        int studentCode = Integer.parseInt(parameter.get("professorCode"));
+        int studentCode = Integer.parseInt(parameter.get("studentCode"));
 
         if (adminStudentService.deleteStudent(studentCode)) {
             adminStudentPrint.printSuccessMessage("delete");
