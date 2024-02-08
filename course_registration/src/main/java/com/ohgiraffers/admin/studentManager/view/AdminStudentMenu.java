@@ -1,9 +1,7 @@
 package com.ohgiraffers.admin.studentManager.view;
 
 import com.ohgiraffers.admin.classManager.model.dto.ClassDTO;
-import com.ohgiraffers.admin.lectureManager.controller.LectureController;
 import com.ohgiraffers.admin.studentManager.controller.StudentController;
-import com.ohgiraffers.admin.studentManager.model.dto.StudentDTO;
 import com.ohgiraffers.common.SearchCondition;
 
 import java.util.HashMap;

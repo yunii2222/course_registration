@@ -9,9 +9,9 @@ public class ProfessorDTO {
     public ProfessorDTO() {
     }
 
-    public ProfessorDTO(int professorCode, String professorNmae, String professorPhone, int subjectCode) {
+    public ProfessorDTO(int professorCode, String professorName, String professorPhone, int subjectCode) {
         this.professorCode = professorCode;
-        this.professorName = professorNmae;
+        this.professorName = professorName;
         this.professorPhone = professorPhone;
         this.subjectCode = subjectCode;
     }
@@ -24,12 +24,12 @@ public class ProfessorDTO {
         this.professorCode = professorCode;
     }
 
-    public String getProfessorNmae() {
+    public String getProfessorName() {
         return professorName;
     }
 
-    public void setProfessorNmae(String professorNmae) {
-        this.professorName = professorNmae;
+    public void setProfessorName(String professorName) {
+        this.professorName = professorName;
     }
 
     public String getProfessorPhone() {
