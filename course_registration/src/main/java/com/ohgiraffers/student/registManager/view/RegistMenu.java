@@ -38,7 +38,7 @@ public class RegistMenu {
 
                     case 1 : registController.selectLectureByCondition(registSubMenu());
                              registController.addNewRegist(addSubMenu(), student); break;
-                    case 2 : registController.selectRegistByStudent(student);
+                    case 2 : registController.selectLectureByStudent(student);
                              registController.deleteRegist(deleteSubMenu(), student); break;
                     case 3: System.out.println("========상위 메뉴로 이동합니다.========"); return;
                     default : System.out.println("잘못된 번호입니다. 확인 후 다시 입력해 주세요."); break;
@@ -71,7 +71,8 @@ public class RegistMenu {
 
             Map<String, String> parameter = new HashMap<>();
 
-            /* 1 or 2로 조회를 해 */
+            /* 1 or 2로 조회를 해
+            *    ㄴ네.. */
             switch (selectMenu){
                 case 1 : parameter.put("option", "all"); break;
                 case 2 : inputSearchCondition(parameter); break;
