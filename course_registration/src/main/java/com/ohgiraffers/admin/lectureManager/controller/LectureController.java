@@ -37,29 +37,29 @@ public class LectureController {
 
     }
 
-    public void addNewClass(LectureDTO lectureDTO) {
+    public void addNewLecture(LectureDTO lectureDTO) {
 
-        if(lectureService.addNewClass(lectureDTO)){
+        if(lectureService.addNewLecture(lectureDTO)){
             LecturePrint.printSuccessMessage("insert");
         }else {
             LecturePrint.printErrorMessage("insert");
         }
     }
 
-    public void modifyClass(LectureDTO lectureDTO) {
+    public void modifyLecture(LectureDTO lectureDTO) {
 
-        if(lectureService.addNewClass(lectureDTO)){
+        if(lectureService.modifyLecture(lectureDTO)){
             LecturePrint.printSuccessMessage("update");
         }else {
             LecturePrint.printErrorMessage("update");
         }
     }
 
-    public void deleteClass(Map<String, String> parameter) {
+    public void deleteLecture(Map<String, String> parameter) {
 
         int lectureCode = Integer.parseInt(parameter.get("lectureCode"));
 
-        if (lectureService.deleteClass(lectureCode)) {
+        if (lectureService.deleteLecture(lectureCode)) {
             LecturePrint.printSuccessMessage("delete");
         }else {
             LecturePrint.printErrorMessage("delete");

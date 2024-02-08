@@ -36,32 +36,32 @@ public class ProfessorController {
         }
     }
 
-    public void addNewClass(ProfessorDTO professorDTO) {
+    public void addNewProfessor(ProfessorDTO professorDTO) {
 
-        if(professorService.addNewClass(professorDTO)){
+        if(professorService.addNewProfessor(professorDTO)){
             professorPrint.printSuccessMessage("insert");
         }else {
             professorPrint.printErrorMessage("insert");
         }
     }
 
-    public void modifyClass(ProfessorDTO professorDTO) {
+    public void modifyProfessor(ProfessorDTO professorDTO) {
 
-        if(professorService.modifyClass(professorDTO)){
-            professorPrint.printSuccessMessage("insert");
+        if(professorService.modifyProfessor(professorDTO)){
+            professorPrint.printSuccessMessage("update");
         }else {
-            professorPrint.printErrorMessage("insert");
+            professorPrint.printErrorMessage("update");
         }
     }
 
-    public void deleteClass(Map<String, String> parameter) {
+    public void deleteProfessor(Map<String, String> parameter) {
 
-        int classCode = Integer.parseInt(parameter.get("classCode"));
+        int professorCode = Integer.parseInt(parameter.get("professorCode"));
 
-        if (classService.deleteClass(classCode)) {
-            classPrint.printSuccessMessage("delete");
+        if (professorService.deleteProfessor(professorCode)) {
+            professorPrint.printSuccessMessage("delete");
         }else {
-            classPrint.printErrorMessage("delete");
+            professorPrint.printErrorMessage("delete");
         }
     }
 }

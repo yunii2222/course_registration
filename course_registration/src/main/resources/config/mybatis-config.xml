@@ -14,7 +14,7 @@
         <typeAlias type="com.ohgiraffers.admin.classManager.model.dto.ClassDTO" alias="ClassDTO"/>
         <typeAlias type="com.ohgiraffers.admin.lectureManager.model.dto.LectureDTO" alias="LectureDTO"/>
         <typeAlias type="com.ohgiraffers.admin.professorManager.model.dto.ProfessorDTO" alias="ProfessorDTO"/>
-        <typeAlias type="com.ohgiraffers.admin.studentManager.model.dto.StudentDTO" alias="StudentDTO"/>
+        <typeAlias type="com.ohgiraffers.admin.studentManager.model.dto.AdminStudentDTO" alias="StudentDTO"/>
         <typeAlias type="com.ohgiraffers.student.registManager.model.dto.RegistDTO" alias="RegistDTO"/>
     </typeAliases>
 
@@ -36,7 +36,7 @@
         <mapper class="com.ohgiraffers.admin.classManager.model.dao.ClassDAO"/>
         <mapper class="com.ohgiraffers.admin.lectureManager.model.dao.LectureDAO"/>
         <mapper class="com.ohgiraffers.admin.professorManager.model.dao.ProfessorDAO"/>
-        <mapper class="com.ohgiraffers.admin.studentManager.model.dao.StudentDAO"/>
+        <mapper class="com.ohgiraffers.admin.studentManager.model.dao.AdminStudentDAO"/>
         <mapper class="com.ohgiraffers.student.registManager.model.dao.RegistDAO"/>
     </mappers>
 

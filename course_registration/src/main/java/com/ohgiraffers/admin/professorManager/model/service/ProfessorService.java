@@ -14,7 +14,15 @@ public class ProfessorService {
         return null;
     }
 
-    public boolean addNewClass(ProfessorDTO professorDTO) {
+    public boolean addNewProfessor(ProfessorDTO professorDTO) {
+        return false;
+    }
+
+    public boolean modifyProfessor(ProfessorDTO professorDTO) {
+        return false;
+    }
+
+    public boolean deleteProfessor(int professorCode) {
         return false;
     }
 }

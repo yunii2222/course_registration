@@ -1,6 +1,6 @@
 package com.ohgiraffers.admin.studentManager.model.dto;
 
-public class StudentDTO {
+public class AdminStudentDTO {
     private int studentCode;
     private String studentName;
     private String studentPhone;
@@ -10,10 +10,10 @@ public class StudentDTO {
     private int majorStudent;
     private int tutorProfessor;
 
-    public StudentDTO() {
+    public AdminStudentDTO() {
     }
 
-    public StudentDTO(int studentCode, String studentName, String studentPhone, int studentGrade, String password, String studentStatus, int majorStudent, int tutorProfessor) {
+    public AdminStudentDTO(int studentCode, String studentName, String studentPhone, int studentGrade, String password, String studentStatus, int majorStudent, int tutorProfessor) {
         this.studentCode = studentCode;
         this.studentName = studentName;
         this.studentPhone = studentPhone;

@@ -18,9 +18,14 @@ public class LecturePrint {
         System.out.println("==== ERROR ====");
         String errorMessage = "";
         switch (errorCode) {
-            case "classList":
-                errorMessage = "수업 조회 실패";
-                break;
+            case "lectureList":
+                errorMessage = "강의 조회 실패"; break;
+            case "insert" :
+                errorMessage = "신규 강의 등록에 실패했습니다"; break;
+            case "update" :
+                errorMessage = "강의 수정을 실패했습니다"; break;
+            case "delete" :
+                errorMessage = "강의 삭제를 실패했습니다"; break;
 
         }
     }

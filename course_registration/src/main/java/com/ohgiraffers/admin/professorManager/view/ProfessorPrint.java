@@ -18,9 +18,15 @@ public class ProfessorPrint {
         System.out.println("==== ERROR ====");
         String errorMessage = "";
         switch (errorCode) {
-            case "classList":
+            case "professorList":
                 errorMessage = "교수 조회 실패";
                 break;
+            case "insert" :
+                errorMessage = "신규 교수 등록에 실패했습니다."; break;
+            case "update" :
+                errorMessage = "교수 수정이 실패했습니다"; break;
+            case "delete" :
+                errorMessage = "교수 삭제가 실패했습니다."; break;
 
         }
     }
@@ -34,8 +40,8 @@ public class ProfessorPrint {
             case "professorName":
                 searchOption = "교수명으로 검색결과";
                 break;
-            case "subjectCode":
-                searchOption = "학과로 검색";
+            case "subjectName":
+                searchOption = "학과명으로 검색";
                 break;
         }
 
@@ -54,11 +60,11 @@ public class ProfessorPrint {
         String successMessage = "";
         switch (successCode) {
             case "insert" :
-                successMessage = "신규 강의 등록이 완료 되었습니다."; break;
+                successMessage = "신규 교수 등록이 완료 되었습니다."; break;
             case "update" :
-                successMessage = "강의 수정이 완료되었습니다"; break;
+                successMessage = "교수 수정이 완료되었습니다"; break;
             case "delete" :
-                successMessage = "강의 삭제가 완료되었습니다."; break;
+                successMessage = "교수 삭제가 완료되었습니다."; break;
         }
         System.out.println(successMessage);
     }

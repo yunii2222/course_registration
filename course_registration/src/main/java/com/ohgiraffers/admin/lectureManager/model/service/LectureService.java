@@ -14,11 +14,15 @@ public class LectureService {
         return null;
     }
 
-    public boolean addNewClass(LectureDTO lectureDTO) {
+    public boolean addNewLecture(LectureDTO lectureDTO) {
         return false;
     }
 
-    public boolean deleteClass(int lectureCode) {
+    public boolean modifyLecture(LectureDTO lectureDTO) {
+        return false;
+    }
+
+    public boolean deleteLecture(int lectureCode) {
         return false;
     }
 }
