@@ -16,7 +16,7 @@ public class RegistController {
     private RegistPrint registPrint = new RegistPrint();
 
     public void selectLectureByCondition(Map<String, String> parameter){
-        List<LectureDTO> lectureList = registService.selectLectureByCondition();
+        List<LectureDTO> lectureList = registService.selectLectureByCondition(parameter);
 
         if ( lectureList != null) {
             registPrint.printAllLectureList(lectureList);
