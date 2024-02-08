@@ -49,8 +49,8 @@ public class AdminStudentMenu {
         System.out.println("============================");
         System.out.println("1.학번으로 조회");
         System.out.println("2.학생이름으로 조회");
-        System.out.println("3.전공으로 조회");
-        System.out.println("4.학적으로 조회");
+        System.out.println("3.학적으로 조회");
+        System.out.println("4.전공으로 조회");
         System.out.println("===================================");
         System.out.println("원하는 조건의 번호를 입력해 주세요");
         System.out.print("=> ");
@@ -125,6 +125,7 @@ public class AdminStudentMenu {
         int studentGrade = sc.nextInt();
         System.out.println("학생의 비밀번호를 입력해주세요");
         System.out.print("=> ");
+        sc.nextLine();
         String password = sc.nextLine();
         System.out.println("학생의 학적을 입력해주세요");
         System.out.println("( E-재학중, T-휴학, G-졸업, O-퇴학 )");
@@ -158,6 +159,7 @@ public class AdminStudentMenu {
         int studentCode = sc.nextInt();
         System.out.println("학생의 이름을 입력해주세요");
         System.out.print("=> ");
+        sc.nextLine();
         String studentName = sc.nextLine();
         System.out.println("학생의 연락처를 입력해주세요");
         System.out.print("=> ");
@@ -167,6 +169,7 @@ public class AdminStudentMenu {
         int studentGrade = sc.nextInt();
         System.out.println("학생의 비밀번호를 입력해주세요");
         System.out.print("=> ");
+        sc.nextLine();
         String password = sc.nextLine();
         System.out.println("학생의 학적을 입력해주세요");
         System.out.println("( E-재학중, T-휴학, G-졸업, O-퇴학 )");
