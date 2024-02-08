@@ -15,8 +15,8 @@ public class AdminMenu {
             System.out.println("========== 관리자 메뉴 =========");
             System.out.println("1.수업 관리 메뉴");
             System.out.println("2.강의 관리 메뉴");
-            System.out.println("3.학생 관리 메뉴");
-            System.out.println("4.교수 관리 메뉴");
+            System.out.println("3.교수 관리 메뉴");
+            System.out.println("4.학생 관리 메뉴");
             System.out.println("0.이전 메뉴로");
             System.out.println("원하는 관리자 메뉴 번호를 선택해주세요");
             System.out.print("=> ");
