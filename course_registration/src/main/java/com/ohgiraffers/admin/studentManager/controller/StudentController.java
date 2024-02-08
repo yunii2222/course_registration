@@ -7,7 +7,6 @@ import com.ohgiraffers.common.SearchCondition;
 
 import java.util.List;
 import java.util.Map;
-
 public class StudentController {
     private AdminStudentService adminStudentService = new AdminStudentService();
 

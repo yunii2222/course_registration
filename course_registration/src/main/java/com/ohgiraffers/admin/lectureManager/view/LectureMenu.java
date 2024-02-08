@@ -16,12 +16,12 @@ public class LectureMenu {
         LectureController lectureController = new LectureController();
 
         do {
-            System.out.println("========== 수업 관리 메뉴 =========");
-            System.out.println("1.전체 수업 조회");
-            System.out.println("2.조건 수업 조회");
-            System.out.println("3.수업 추가");
-            System.out.println("4.수업 수정");
-            System.out.println("5.수업 삭제");
+            System.out.println("========== 강의 관리 메뉴 =========");
+            System.out.println("1.전체 강의 조회");
+            System.out.println("2.조건으로 강의 조회");
+            System.out.println("3.강의 추가");
+            System.out.println("4.강의 수정");
+            System.out.println("5.강의 삭제");
             System.out.println("6.이전 메뉴로");
             System.out.println("원하시는 관리 메뉴 번호를 선택해주세요");
             System.out.print("=> ");
@@ -103,7 +103,7 @@ public class LectureMenu {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("===================================");
-        System.out.println("등록할 교수를 입력해주세요");
+        System.out.println("등록할 강의를 입력해주세요");
         LectureDTO lectureDTO = new LectureDTO();
         getLectureInfo(lectureDTO);
         System.out.println("===================================");
@@ -137,8 +137,8 @@ public class LectureMenu {
 
         lectureDTO.setLectureLimit(lectureLimit);
         lectureDTO.setLecturePlace(lecturePlace);
-        lectureDTO.setProfessorCode(professorDTO);
-        lectureDTO.setClassCode(classDTO);
+        lectureDTO.setProfessorDTO(professorDTO);
+        lectureDTO.setClassDTO(classDTO);
         lectureDTO.setSemester(semester);
 
         return lectureDTO;
@@ -153,29 +153,34 @@ public class LectureMenu {
         System.out.println("수정할 강의코드를 입력해주세요");
         System.out.print("=> ");
         int lectureCode = sc.nextInt();
-        System.out.println("등록할 수업 정원을 입력해주세요");
+        System.out.println("수정할 수업 정원을 입력해주세요");
         System.out.print("=> ");
         int lectureLimit = sc.nextInt();
-        System.out.println("등록할 수업장소를 입력해주세요");
+        System.out.println("수정할 수업장소를 입력해주세요");
         System.out.print("=> ");
         String lecturePlace = sc.nextLine();
-        System.out.println("등록할 교수 코드를 입력해주세요");
+        System.out.println("수정할 교수 코드를 입력해주세요");
         System.out.print("=> ");
         int professorCode = sc.nextInt();
-        System.out.println("등록할 수업 코드를 입력해주세요");
+        System.out.println("수정할 수업 코드를 입력해주세요");
         System.out.print("=> ");
         int classCode = sc.nextInt();
-        System.out.println("등록할 개설학기를 입력해주세요");
+        System.out.println("수정할 개설학기를 입력해주세요");
         System.out.print("=> ");
         String semester = sc.nextLine();
 
         LectureDTO lectureDTO = new LectureDTO();
 
+        ProfessorDTO professorDTO = new ProfessorDTO();
+        professorDTO.setProfessorCode(professorCode);
+        ClassDTO classDTO = new ClassDTO();
+        classDTO.setClassCode(classCode);
+
         lectureDTO.setLectureCode(lectureCode);
         lectureDTO.setLectureLimit(lectureLimit);
         lectureDTO.setLecturePlace(lecturePlace);
-        lectureDTO.setProfessorCode(professorCode);
-        lectureDTO.setClassCode(classCode);
+        lectureDTO.setProfessorDTO(professorDTO);
+        lectureDTO.setClassDTO(classDTO);
         lectureDTO.setSemester(semester);
 
 
