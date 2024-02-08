@@ -3,11 +3,25 @@
 
 <mapper namespace="com.ohgiraffers.student.registManager.model.dao.RegistDAO">
 
-    <select id="selectAllRegistList" resultType="RegistDTO">
+    <select id="selectAllRegistList" resultType="LectureDTO"> /* 반환값 고민 */
         SELECT student_code, lecture_code, regist_date
         FROM tb_regist
         WHERE student_code = #{studentCode}
     </select>
 
+    <select id="selectRegistByCondition" resultType="LectureDTO">
+
+    </select>
+
+    <insert id="insertRegist">
+        INSERT INTO tb_regist (student_code, lecture_code, regist_date)
+        VALUES (#{studentCode}, #{lectureCode}, now())
+    </insert>
+
+    <delete id="deleteRegist">
+        DELETE FROM tb_regist
+        WHERE student_code = #{studentCode}
+        AND lecture_code = #{lectureCode}
+    </delete>
 
 </mapper>
