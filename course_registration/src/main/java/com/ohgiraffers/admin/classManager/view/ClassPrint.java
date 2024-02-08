@@ -19,8 +19,13 @@ public class ClassPrint {
         String errorMessage = "";
         switch (errorCode) {
             case "classList":
-                errorMessage = "수업 조회 실패";
-                break;
+                errorMessage = "수업 조회 실패"; break;
+            case "insert" :
+                errorMessage = "신규 수업 등록이 실패했습니다"; break;
+            case "update" :
+                errorMessage = "수업 수정이 실패했습니다"; break;
+            case "delete" :
+                errorMessage = "수업 삭제가 실패했습니다."; break;
 
         }
     }
