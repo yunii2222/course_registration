@@ -15,7 +15,7 @@ public class ClassController {
 
     private ClassPrint classPrint = new ClassPrint();
 
-    public List<ClassDTO> selectAllClassList(){
+    public void selectAllClassList(){
         List<ClassDTO> classList = classService.selectAllClassList();
 
         if ( classList != null) {
@@ -23,8 +23,6 @@ public class ClassController {
         }else {
             classPrint.printErrorMessage("selectOne");
         }
-
-        return classList;
     }
 
     public void selectClassByCondition(SearchCondition searchCondition){

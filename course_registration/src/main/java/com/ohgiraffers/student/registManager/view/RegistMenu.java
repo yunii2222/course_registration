@@ -35,6 +35,7 @@ public class RegistMenu {
                 int selectMenu = sc.nextInt();
 
                 switch (selectMenu){
+
                     case 1 : registController.selectLectureByCondition(registSubMenu());
                              registController.addNewRegist(addSubMenu(), student); break;
                     case 2 : registController.selectRegistByStudent(student);
