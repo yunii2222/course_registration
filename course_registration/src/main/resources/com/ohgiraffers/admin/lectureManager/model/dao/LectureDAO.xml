@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ohgiraffers.admin.lectureManager.model.dao.LectureDAO">
+
+    <select id="selectAllLectureList" resultType="LectureDTO">
+        SELECT lecture_code, lecture_limit, regist_student, lecture_place, professor_code, class_code, semester
+        FROM tb_lecture
+        ORDER BY lecture_code;
+    </select>
+
+    <select id="selectLectureByCondition" resultType="LectureDTO">
+        SELECT lecture_code, lecture_limit, regist_student, lecture_place, professor_code, class_code, semester
+        FROM tb_lecture
+        WHERE
+        <choose>
+            <when test="option == 'professorName'">
+                professor_name LIKE CONCAT('%', #{value}, '%') /* 조인 필요 */
+            </when>
+            <when test="option == 'className'">
+                class_name LIKE CONCAT('%', #{value}, '%') /* 조인 필요 */
+            </when>
+            <when test="option == 'semester'">
+                semester LIKE CONCAT('%', #{value}, '%')
+            </when>
+            <when test="option == 'lecturePlace'">
+                lecture_place LIKE CONCAT('%', #{value}, '%')
+            </when>
+        </choose>
+        ORDER BY lecture_code
+    </select>
+
+    <insert id="insertLecture">
+        INSERT INTO tb_lecture (lecture_limit, lecture_place, professor_code, class_code, semester)
+        VALUES (#{lectureLimit}, #{lecturePlace}, #{professorCode}, #{classCode}, #{semester})
+    </insert>
+
+    <update id="updateLecture">
+        UPDATE tb_lecture
+        <set>
+            <if test="lectureLimit gt 0">
+                lecture_limit = #{lectureLimit},
+            </if>
+            <if test="registStudent gt 0">
+                regist_student = #{registStudent},
+            </if>
+            <if test="lecturePlace != null and lecturePlace != 'SKIP'">
+                lecture_place = #{lecturePlace},
+            </if>
+            <if test="professorCode gt 0">
+                professor_code = #{professorCode},
+            </if>
+            <if test="classCode gt 0">
+                class_code = #{classCode},
+            </if>
+            <if test="semester != null and semester != 'SKIP'">
+                semester = #{semester}
+            </if>
+        </set>
+        WHERE lecture_code = #{lectureCode}
+    </update>
+
+    <delete id="deleteLecture">
+        DELETE FROM tb_lecture
+        WHERE lecture_code = #{lectureCode}
+    </delete>
+
+</mapper>

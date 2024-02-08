@@ -60,7 +60,7 @@
                 class_status = #{classStatus}
             </if>
         </set>
-        WHERE class_code =#{classCode}
+        WHERE class_code = #{classCode}
     </update>
 
     <delete id="deleteClass">
