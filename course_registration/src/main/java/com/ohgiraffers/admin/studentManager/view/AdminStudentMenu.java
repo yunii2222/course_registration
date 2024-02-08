@@ -103,7 +103,7 @@ public class AdminStudentMenu {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("===================================");
-        System.out.println("등록할 수업을 입력해주세요");
+        System.out.println("등록할 학생을 입력해주세요");
         AdminStudentDTO adminStudentDTO = new AdminStudentDTO();
         getAdminStudentInfo(adminStudentDTO);
         System.out.println("===================================");
@@ -203,7 +203,7 @@ public class AdminStudentMenu {
 
         System.out.println("===================================");
         System.out.println("삭제할 학생의 코드를 입력해주세요");
-        System.out.println("=> ");
+        System.out.print("=> ");
         String studentCode = sc.nextLine();
         System.out.println();
 

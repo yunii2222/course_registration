@@ -17,10 +17,11 @@ public class RegistPrint {
         String errorMessage = "";
         switch (errorCode) {
             case "lectureList":
-                errorMessage = "전체 강의 조회 실패";
+                errorMessage = "전체 강의 조회 실패"; break;
             case "selectOne" :
-                errorMessage = "신청한 강의 조회 실패";
-
+                errorMessage = "신청한 강의 조회 실패"; break;
+            case "deleteOne" :
+                errorMessage = "신청한 강의 삭제 실패"; break;
         }
         System.out.println(errorMessage);
     }
@@ -29,7 +30,7 @@ public class RegistPrint {
         String successMessage = "";
         switch (successCode) {
             case "deleteOne" :
-                successMessage = "해당 강의를 취소했습니다.";
+                successMessage = "해당 강의를 취소했습니다."; break;
         }
         System.out.println(successMessage);
 
