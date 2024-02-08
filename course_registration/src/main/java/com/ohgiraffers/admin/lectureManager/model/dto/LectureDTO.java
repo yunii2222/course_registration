@@ -1,25 +1,28 @@
 package com.ohgiraffers.admin.lectureManager.model.dto;
 
+import com.ohgiraffers.admin.classManager.model.dto.ClassDTO;
+import com.ohgiraffers.admin.professorManager.model.dto.ProfessorDTO;
+
 public class LectureDTO {
 
     private int lectureCode;
     private int lectureLimit;
     private int registStudent;
     private String lecturePlace;
-    private int professorCode;
-    private int classCode;
+    private ProfessorDTO professorDTO;
+    private ClassDTO classDTO;
     private String semester;
-
     public LectureDTO() {
     }
 
-    public LectureDTO(int lectureCode, int lectureLimit, int registStudent, String lecturePlace, int professorCode, int classCode, String semester) {
+    public LectureDTO(int lectureCode, int lectureLimit, int registStudent, String lecturePlace, ProfessorDTO professorDTO, ClassDTO classDTO, String semester) {
+
         this.lectureCode = lectureCode;
         this.lectureLimit = lectureLimit;
         this.registStudent = registStudent;
         this.lecturePlace = lecturePlace;
-        this.professorCode = professorCode;
-        this.classCode = classCode;
+        this.professorDTO = professorDTO;
+        this.classDTO = classDTO;
         this.semester = semester;
     }
 
@@ -55,20 +58,20 @@ public class LectureDTO {
         this.lecturePlace = lecturePlace;
     }
 
-    public int getProfessorCode() {
-        return professorCode;
+    public ProfessorDTO getProfessorDTO() {
+        return professorDTO;
     }
 
-    public void setProfessorCode(int professorCode) {
-        this.professorCode = professorCode;
+    public void setProfessorDTO(ProfessorDTO professorDTO) {
+        this.professorDTO = professorDTO;
     }
 
-    public int getClassCode() {
-        return classCode;
+    public ClassDTO getClassDTO() {
+        return classDTO;
     }
 
-    public void setClassCode(int classCode) {
-        this.classCode = classCode;
+    public void setClassDTO(ClassDTO classDTO) {
+        this.classDTO = classDTO;
     }
 
     public String getSemester() {
@@ -86,8 +89,8 @@ public class LectureDTO {
                 ", lectureLimit=" + lectureLimit +
                 ", registStudent=" + registStudent +
                 ", lecturePlace='" + lecturePlace + '\'' +
-                ", professorCode=" + professorCode +
-                ", classCode=" + classCode +
+                ", professorDTO=" + professorDTO +
+                ", classDTO=" + classDTO +
                 ", semester='" + semester + '\'' +
                 '}';
     }

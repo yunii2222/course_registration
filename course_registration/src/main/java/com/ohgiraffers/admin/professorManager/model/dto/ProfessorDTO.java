@@ -2,7 +2,7 @@ package com.ohgiraffers.admin.professorManager.model.dto;
 
 public class ProfessorDTO {
     private int professorCode;
-    private String professorNmae;
+    private String professorName;
     private String professorPhone;
     private int subjectCode;
 
@@ -11,7 +11,7 @@ public class ProfessorDTO {
 
     public ProfessorDTO(int professorCode, String professorNmae, String professorPhone, int subjectCode) {
         this.professorCode = professorCode;
-        this.professorNmae = professorNmae;
+        this.professorName = professorNmae;
         this.professorPhone = professorPhone;
         this.subjectCode = subjectCode;
     }
@@ -25,11 +25,11 @@ public class ProfessorDTO {
     }
 
     public String getProfessorNmae() {
-        return professorNmae;
+        return professorName;
     }
 
     public void setProfessorNmae(String professorNmae) {
-        this.professorNmae = professorNmae;
+        this.professorName = professorNmae;
     }
 
     public String getProfessorPhone() {
@@ -52,7 +52,7 @@ public class ProfessorDTO {
     public String toString() {
         return "ProfessorDTO{" +
                 "professorCode=" + professorCode +
-                ", professorNmae='" + professorNmae + '\'' +
+                ", professorName='" + professorName + '\'' +
                 ", professorPhone='" + professorPhone + '\'' +
                 ", subjectCode=" + subjectCode +
                 '}';
