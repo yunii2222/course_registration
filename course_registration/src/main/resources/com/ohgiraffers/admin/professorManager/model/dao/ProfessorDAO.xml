@@ -38,13 +38,13 @@
     <update id="updateProfessor">
         UPDATE tb_professor
         <set>
-            <if test="className != null and className != 'SKIP'">
+            <if test="professorName != null and professorName != 'SKIP'">
                 professor_name = #{professorName},
             </if>
-            <if test="category != null and category != 'SKIP'">
+            <if test="professorPhone != null and professorPhone != 'SKIP'">
                 professor_phone = #{professorPhone},
             </if>
-            <if test="classGrade gt 0">
+            <if test="subjectCode gt 0">
                 subject_code = #{subjectCode},
             </if>
         </set>

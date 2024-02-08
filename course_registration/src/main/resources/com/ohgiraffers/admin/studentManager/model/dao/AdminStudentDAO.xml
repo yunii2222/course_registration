@@ -47,7 +47,7 @@
             <if test="studentPhone != null and studentPhone != 'SKIP'">
                 student_phone = #{studentPhone},
             </if>
-            <if test="studentGrade != null and studentGrade != 'SKIP'">
+            <if test="studentGrade gt 0">
                 student_grade = #{studentGrade},
             </if>
             <if test="password != null and password != 'SKIP'">
