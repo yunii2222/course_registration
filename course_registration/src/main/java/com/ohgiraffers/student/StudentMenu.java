@@ -18,7 +18,7 @@ public class StudentMenu {
         if(isLogin) {
             do {
                 System.out.println("========== 학생 메뉴 =========");
-                System.out.println("1.수강신청하기");
+                System.out.println("1.수강신청 시스템");
                 System.out.println("0.이전 메뉴로");
                 System.out.println("원하시는 프로그램의 번호를 선택해주세요");
                 System.out.print("=> ");
