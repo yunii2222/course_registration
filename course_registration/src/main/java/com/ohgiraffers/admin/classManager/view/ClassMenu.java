@@ -53,7 +53,6 @@ public class ClassMenu {
         System.out.println("4.교과구분으로 조회");
         System.out.println("5.학점으로 조회");
         System.out.println("6.학년으로 조회");
-        System.out.println("0.이전 메뉴로");
         System.out.println("===================================");
         System.out.println("원하는 조건의 번호를 입력해 주세요");
         System.out.print("=> ");
@@ -102,7 +101,6 @@ public class ClassMenu {
                 System.out.print("=> ");
                 value = sc.nextLine();
                 break;
-            case 0 : System.out.println("========상위 메뉴로 이동합니다.========"); return null;
             default : System.out.println("잘못된 번호입니다. 확인 후 다시 입력해 주세요."); break;
 
         }

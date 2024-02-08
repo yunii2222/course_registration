@@ -1,5 +1,6 @@
 package com.ohgiraffers.admin.studentManager.controller;
 
+public class StudentController {
 import com.ohgiraffers.admin.professorManager.model.dto.ProfessorDTO;
 import com.ohgiraffers.admin.professorManager.model.service.ProfessorService;
 import com.ohgiraffers.admin.professorManager.view.ProfessorPrint;

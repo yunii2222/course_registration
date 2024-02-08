@@ -24,9 +24,9 @@ public class AdminMenu {
 
             switch (selectMenu) {
                 case 1 : new ClassMenu().adminClassDisplayMenu();break;
-                case 2 : // new LectureMenu().adminLectureDisplayMenu();break;
-                case 3 : // new ProfessorMenu().adminProfessorDisplayMenu();break;
-                case 4 : // new AdminStudentMenu().adminStudentDisplayMenu();break;
+                case 2 : new LectureMenu().adminLectureDisplayMenu();break;
+                case 3 : new ProfessorMenu().adminProfessorDisplayMenu();break;
+                case 4 : new AdminStudentMenu().adminStudentDisplayMenu();break;
                 case 0 :
                     System.out.println("이전 메뉴로"); return;
                 default:
