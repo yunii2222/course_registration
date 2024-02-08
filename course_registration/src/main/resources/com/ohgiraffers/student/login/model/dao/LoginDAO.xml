@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ohgiraffers.student.login.model.dao.LoginDAO">
+
+    <select id="selectStudentByIdAndPassword" resultType="StudentDTO">
+        SELECT student_code, student_name, student_phone, student_grade, password, student_status, major_subject, tutor_professor
+        FROM tb_student
+        WHERE student_code = #{studentCode}
+        AND password = #{password}
+    </select>
+
+
+</mapper>
