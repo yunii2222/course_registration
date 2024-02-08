@@ -2,6 +2,7 @@ package com.ohgiraffers.admin.studentManager.view;
 
 import com.ohgiraffers.admin.classManager.model.dto.ClassDTO;
 import com.ohgiraffers.admin.studentManager.controller.StudentController;
+import com.ohgiraffers.admin.studentManager.model.dto.AdminStudentDTO;
 import com.ohgiraffers.common.SearchCondition;
 
 import java.util.HashMap;
@@ -14,12 +15,12 @@ public class AdminStudentMenu {
         StudentController studentController = new StudentController();
 
         do {
-            System.out.println("========== 교수 관리 메뉴 =========");
-            System.out.println("1.전체 교수 조회");
-            System.out.println("2.조건 교수 조회");
-            System.out.println("3.교수 추가");
-            System.out.println("4.교수 수정");
-            System.out.println("5.교수 삭제");
+            System.out.println("========== 학생 관리 메뉴 =========");
+            System.out.println("1.전체 학생 조회");
+            System.out.println("2.조건으로 학생 조회");
+            System.out.println("3.학생 추가");
+            System.out.println("4.학생 수정");
+            System.out.println("5.학생 삭제");
             System.out.println("6.이전 메뉴로");
             System.out.println("원하시는 관리 메뉴 번호를 선택해주세요");
             System.out.print("=> ");
@@ -27,11 +28,11 @@ public class AdminStudentMenu {
             int selectMenu = sc.nextInt();
 
             switch (selectMenu){
-                case 1 : studentController.selectAllClassList();break;
-                case 2 : studentController.selectClassByCondition(inputSearchCondition()); break;
-                case 3 : studentController.addNewClass(inputNewClassInfo());break;
-                case 4 : studentController.modifyClass(inputModifyClassInfo()); break;
-                case 5 : studentController.deleteClass(inputDeleteClassInfo()); break;
+                case 1 : studentController.selectAllStudentList();break;
+                case 2 : studentController.selectStudentByCondition(inputSearchCondition()); break;
+                case 3 : studentController.addNewStudent(inputNewStudentInfo());break;
+                case 4 : studentController.modifyStudent(inputModifyStudentInfo()); break;
+                case 5 : studentController.deleteStudent(inputDeleteStudentInfo()); break;
                 case 6 : System.out.println("========상위 메뉴로 이동합니다.========"); return;
                 default : System.out.println("잘못된 번호입니다. 확인 후 다시 입력해 주세요."); break;
             }
@@ -72,16 +73,16 @@ public class AdminStudentMenu {
                 break;
             case 3 :
                 sc.nextLine();
-                option = "Status";
-                System.out.println("조회할 전공을 입력해주세요");
+                option = "studentStatus";
+                System.out.println("조회할 학적을 입력해주세요");
+                System.out.println("( E-재학중, T-휴학, G-졸업, O-퇴학 )");
                 System.out.print("=> ");
                 value = sc.nextLine();
                 break;
             case 4 :
                 sc.nextLine();
-                option = "category";
-                System.out.println("조회할 학적을 입력해주세요");
-                System.out.println("( E-재학중, T-휴학, G-졸업, O-퇴학 )");
+                option = "majorSubject";
+                System.out.println("조회할 전공을 입력해주세요");
                 System.out.print("=> ");
                 value = sc.nextLine();
                 break;
@@ -98,81 +99,113 @@ public class AdminStudentMenu {
     /* 조건 선택 end */
 
     /* 수업 등록 start */
-    private ClassDTO inputNewClassInfo() {
+    private AdminStudentDTO inputNewStudentInfo() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("===================================");
         System.out.println("등록할 수업을 입력해주세요");
-        ClassDTO classDTO = new ClassDTO();
-        getClassInfo(classDTO);
+        AdminStudentDTO adminStudentDTO = new AdminStudentDTO();
+        getAdminStudentInfo(adminStudentDTO);
         System.out.println("===================================");
 
-        return classDTO;
+        return adminStudentDTO;
     }
 
-    private static ClassDTO getClassInfo(ClassDTO classDTO) {
+    private static AdminStudentDTO getAdminStudentInfo(AdminStudentDTO adminStudentDTO) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("학생이름을 입력해주세요.");
+        System.out.println("학생의 이름을 입력해주세요");
         System.out.print("=> ");
-        String className = sc.nextLine();
-        System.out.println("전공을 입력해주세요. (전공 or 교양)");
+        String studentName = sc.nextLine();
+        System.out.println("학생의 연락처를 입력해주세요");
         System.out.print("=> ");
-        String category = sc.nextLine();
-        System.out.println("학적을 입력해주세요.");
+        String studentPhone = sc.nextLine();
+        System.out.println("학생의 학년을 입력해주세요");
         System.out.print("=> ");
-        int classGrade = sc.nextInt();
-        String classStatus = sc.nextLine();
+        int studentGrade = sc.nextInt();
+        System.out.println("학생의 비밀번호를 입력해주세요");
+        System.out.print("=> ");
+        String password = sc.nextLine();
+        System.out.println("학생의 학적을 입력해주세요");
+        System.out.println("( E-재학중, T-휴학, G-졸업, O-퇴학 )");
+        System.out.print("=> ");
+        String studentStatus = sc.nextLine();
+        System.out.println("학생의 전공 코드를 입력해주세요");
+        System.out.print("=> ");
+        int majorSubject = sc.nextInt();
+        System.out.println("학생의 교수 코드를 입력해주세요");
+        System.out.print("=> ");
+        int tutorProfessor = sc.nextInt();
 
+        adminStudentDTO.setStudentName(studentName);
+        adminStudentDTO.setStudentPhone(studentPhone);
+        adminStudentDTO.setStudentGrade(studentGrade);
+        adminStudentDTO.setPassword(password);
+        adminStudentDTO.setStudentStatus(studentStatus);
+        adminStudentDTO.setMajorSubject(majorSubject);
+        adminStudentDTO.setTutorProfessor(tutorProfessor);
 
-        return classDTO;
+        return adminStudentDTO;
     }
     /* 수업 등록 end */
 
     /* 수업 수정 start */
-    private static ClassDTO inputModifyClassInfo() {
+    private static AdminStudentDTO inputModifyStudentInfo() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("===================================");
-        System.out.println("수정할 수업의 코드를 입력해주세요");
+        System.out.println("학생의 코드를 입력해주세요");
         System.out.print("=> ");
-        int classCode = sc.nextInt();
-        System.out.println("수업 명을 입력해주세요.");
+        int studentCode = sc.nextInt();
+        System.out.println("학생의 이름을 입력해주세요");
         System.out.print("=> ");
-        sc.nextLine();
-        String className = sc.nextLine();
-        System.out.println("교과구분을 입력해주세요. (전공 or 교양)");
+        String studentName = sc.nextLine();
+        System.out.println("학생의 연락처를 입력해주세요");
         System.out.print("=> ");
-        String category = sc.nextLine();
-        System.out.println("학년을 입력해주세요.");
+        String studentPhone = sc.nextLine();
+        System.out.println("학생의 학년을 입력해주세요");
         System.out.print("=> ");
-        int classGrade = sc.nextInt();
-        System.out.println("학점을 입력해주세요.(1~3)");
+        int studentGrade = sc.nextInt();
+        System.out.println("학생의 비밀번호를 입력해주세요");
         System.out.print("=> ");
-        sc.nextLine();
-        String classCredit = sc.nextLine();
-        System.out.println("수업형태를 입력해주세요. (온라인 or 오프라인)");
+        String password = sc.nextLine();
+        System.out.println("학생의 학적을 입력해주세요");
+        System.out.println("( E-재학중, T-휴학, G-졸업, O-퇴학 )");
         System.out.print("=> ");
-        String classStatus = sc.nextLine();
+        String studentStatus = sc.nextLine();
+        System.out.println("학생의 전공 코드를 입력해주세요");
+        System.out.print("=> ");
+        int majorSubject = sc.nextInt();
+        System.out.println("학생의 교수 코드를 입력해주세요");
+        System.out.print("=> ");
+        int tutorProfessor = sc.nextInt();
 
-        ClassDTO classDTO = new ClassDTO();
+        AdminStudentDTO adminStudentDTO = new AdminStudentDTO();
 
-        return classDTO;
+        adminStudentDTO.setStudentCode(studentCode);
+        adminStudentDTO.setStudentName(studentName);
+        adminStudentDTO.setStudentPhone(studentPhone);
+        adminStudentDTO.setStudentGrade(studentGrade);
+        adminStudentDTO.setPassword(password);
+        adminStudentDTO.setStudentStatus(studentStatus);
+        adminStudentDTO.setMajorSubject(majorSubject);
+        adminStudentDTO.setTutorProfessor(tutorProfessor);
+
+        return adminStudentDTO;
     }
     /* 수업 수정 end */
 
     /* 수업 삭제 start */
-    private static Map<String, String> inputDeleteClassInfo() {
+    private static Map<String, String> inputDeleteStudentInfo() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("===================================");
-        System.out.println("삭제할 수업의 코드를 입력해주세요");
+        System.out.println("삭제할 학생의 코드를 입력해주세요");
         System.out.println("=> ");
-        String classCode = sc.nextLine();
+        String studentCode = sc.nextLine();
         System.out.println();
 
         Map<String, String> parameter = new HashMap<>();
-        parameter.put("classCode", classCode);
+        parameter.put("studentCode", studentCode);
 
         return parameter;
     }

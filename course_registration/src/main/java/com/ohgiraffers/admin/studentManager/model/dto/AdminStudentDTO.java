@@ -7,20 +7,20 @@ public class AdminStudentDTO {
     private int studentGrade;
     private String password;
     private String studentStatus;
-    private int majorStudent;
+    private int majorSubject;
     private int tutorProfessor;
 
     public AdminStudentDTO() {
     }
 
-    public AdminStudentDTO(int studentCode, String studentName, String studentPhone, int studentGrade, String password, String studentStatus, int majorStudent, int tutorProfessor) {
+    public AdminStudentDTO(int studentCode, String studentName, String studentPhone, int studentGrade, String password, String studentStatus, int majorSubject, int tutorProfessor) {
         this.studentCode = studentCode;
         this.studentName = studentName;
         this.studentPhone = studentPhone;
         this.studentGrade = studentGrade;
         this.password = password;
         this.studentStatus = studentStatus;
-        this.majorStudent = majorStudent;
+        this.majorSubject = majorSubject;
         this.tutorProfessor = tutorProfessor;
     }
 
@@ -72,12 +72,12 @@ public class AdminStudentDTO {
         this.studentStatus = studentStatus;
     }
 
-    public int getMajorStudent() {
-        return majorStudent;
+    public int getMajorSubject() {
+        return majorSubject;
     }
 
-    public void setMajorStudent(int majorStudent) {
-        this.majorStudent = majorStudent;
+    public void setMajorSubject(int majorStudent) {
+        this.majorSubject = majorStudent;
     }
 
     public int getTutorProfessor() {
@@ -97,7 +97,7 @@ public class AdminStudentDTO {
                 ", studentGrade=" + studentGrade +
                 ", password='" + password + '\'' +
                 ", studentStatus='" + studentStatus + '\'' +
-                ", majorStudent=" + majorStudent +
+                ", majorStudent=" + majorSubject +
                 ", tutorProfessor=" + tutorProfessor +
                 '}';
     }
