@@ -1,7 +1,9 @@
 package com.ohgiraffers.admin.lectureManager.view;
 
+import com.ohgiraffers.admin.classManager.model.dto.ClassDTO;
 import com.ohgiraffers.admin.lectureManager.controller.LectureController;
 import com.ohgiraffers.admin.lectureManager.model.dto.LectureDTO;
+import com.ohgiraffers.admin.professorManager.model.dto.ProfessorDTO;
 import com.ohgiraffers.common.SearchCondition;
 
 import java.util.HashMap;
@@ -27,7 +29,7 @@ public class LectureMenu {
             int selectMenu = sc.nextInt();
 
             switch (selectMenu){
-                case 1 : lectureController.selectAllClassList();break;
+                case 1 : lectureController.selectAllLectureList();break;
                 case 2 : lectureController.selectLectureByCondition(inputSearchCondition()); break;
                 case 3 : lectureController.addNewLecture(inputNewLectureInfo());break;
                 case 4 : lectureController.modifyLecture(inputModifyLectureInfo()); break;
@@ -128,10 +130,15 @@ public class LectureMenu {
         System.out.print("=> ");
         String semester = sc.nextLine();
 
+        ProfessorDTO professorDTO = new ProfessorDTO();
+        professorDTO.setProfessorCode(professorCode);
+        ClassDTO classDTO = new ClassDTO();
+        classDTO.setClassCode(classCode);
+
         lectureDTO.setLectureLimit(lectureLimit);
         lectureDTO.setLecturePlace(lecturePlace);
-        lectureDTO.setProfessorCode(professorCode);
-        lectureDTO.setClassCode(classCode);
+        lectureDTO.setProfessorCode(professorDTO);
+        lectureDTO.setClassCode(classDTO);
         lectureDTO.setSemester(semester);
 
         return lectureDTO;
