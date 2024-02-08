@@ -26,8 +26,9 @@
     </resultMap>
 
     <sql id="selectTable">
-        SELECT l.lecture_code, c.class_name, p.professor_name, c.class_credit, c.class_grade, c.class_status,
-               l.lecture_limit, l.regist_student, l.lecture_place, l.semester, p.professor_phone
+        SELECT l.lecture_code, l.lecture_limit, l.regist_student, l.lecture_place, l.semester,
+               p.professor_code, p.professor_name, p.professor_phone, p.subject_code,
+               c.class_code, c.class_name, c.category, c.class_grade, c.class_credit, c.class_status
         FROM tb_lecture l
                  JOIN tb_professor p USING (professor_code)
                  JOIN tb_class c USING (class_code)
