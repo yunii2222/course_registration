@@ -76,10 +76,10 @@
             <if test="lecturePlace != null and lecturePlace != 'SKIP'">
                 lecture_place = #{lecturePlace},
             </if>
-            <if test="professorCode gt 0">
+            <if test="professorDTO.professorCode gt 0">
                 professor_code = #{professorDTO.professorCode},
             </if>
-            <if test="classCode gt 0">
+            <if test="classDTO.classCode gt 0">
                 class_code = #{classDTO.classCode},
             </if>
             <if test="semester != null and semester != 'SKIP'">

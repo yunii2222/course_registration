@@ -44,7 +44,7 @@ public class LectureService {
             sqlSession.rollback();
         }
         sqlSession.close();
-        return false;
+        return result > 0;
     }
 
     public boolean modifyLecture(LectureDTO lectureDTO) {
@@ -59,7 +59,7 @@ public class LectureService {
             sqlSession.rollback();
         }
         sqlSession.close();
-        return false;
+        return result > 0;
     }
 
     public boolean deleteLecture(int lectureCode) {
@@ -74,6 +74,6 @@ public class LectureService {
             sqlSession.rollback();
         }
         sqlSession.close();
-        return false;
+        return result > 0;
     }
 }
