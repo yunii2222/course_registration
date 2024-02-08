@@ -21,17 +21,39 @@ public class RegistController {
         if ( lectureList != null) {
             registPrint.printAllLectureList(lectureList);
         }else {
-            registPrint.printErrorMessage("selectOne");
+            registPrint.printErrorMessage("lectureList");
         }
     }
 
 
-    public void addNewRegist(int i, AdminStudentDTO student) {
+    public void addNewRegist(int parameter, AdminStudentDTO student) {
+        boolean registrationSuccess = registService.addNewRegist(parameter, student);
+        registPrint.printMessage(registrationSuccess);
+
     }
 
     public void selectLectureByStudent(AdminStudentDTO student) {
+        int studentCode = student.getStudentCode();
+
+        List<LectureDTO> lectureList = registService.selectLectureByStudent(studentCode);
+
+        if(lectureList != null) {
+            registPrint.printLectureListByStudent(lectureList);
+        }else {
+            registPrint.printErrorMessage("selectOne");
+        }
     }
 
-    public void deleteRegist(int i, AdminStudentDTO student) {
+    public void deleteRegist(int lectureCode, AdminStudentDTO student) {
+
+        int studentCode = student.getStudentCode();
+
+        List<LectureDTO> lectureList = registService.deleteRegist(lectureCode, studentCode);
+
+        if(lectureList != null){
+            registPrint.printSuccessMessage("deleteOne");
+        }else {
+            registPrint.printErrorMessage("deleteOne");
+        }
     }
 }

@@ -17,14 +17,39 @@ public class RegistPrint {
         String errorMessage = "";
         switch (errorCode) {
             case "lectureList":
-                errorMessage = "강의 조회 실패"; break;
-            case "insert" :
-                errorMessage = "신규 수업 등록이 실패했습니다"; break;
-            case "update" :
-                errorMessage = "수업 수정이 실패했습니다"; break;
-            case "delete" :
-                errorMessage = "수업 삭제가 실패했습니다."; break;
+                errorMessage = "전체 강의 조회 실패";
+            case "selectOne" :
+                errorMessage = "신청한 강의 조회 실패";
 
         }
+        System.out.println(errorMessage);
     }
+    public void printSuccessMessage(String successCode) {
+        System.out.println("==== Success ====");
+        String successMessage = "";
+        switch (successCode) {
+            case "deleteOne" :
+                successMessage = "해당 강의를 취소했습니다.";
+        }
+
+    }
+
+    public void printMessage(boolean isSuccess) {
+        if (isSuccess) {
+            System.out.println("수강신청이 완료되었습니다.");
+        } else {
+            System.out.println("수강신청에 실패하였습니다.");
+        }
+    }
+
+
+    public void printLectureListByStudent(List<LectureDTO> lectureList) {
+        for (LectureDTO lectureDTO : lectureList) {
+            System.out.println(lectureDTO);
+        }
+    }
+
+
+
+
 }

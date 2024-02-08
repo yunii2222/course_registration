@@ -71,7 +71,8 @@ public class RegistMenu {
 
             Map<String, String> parameter = new HashMap<>();
 
-            /* 1 or 2로 조회를 해 */
+            /* 1 or 2로 조회를 해
+            *    ㄴ네.. */
             switch (selectMenu){
                 case 1 : parameter.put("option", "all"); break;
                 case 2 : inputSearchCondition(parameter); break;
