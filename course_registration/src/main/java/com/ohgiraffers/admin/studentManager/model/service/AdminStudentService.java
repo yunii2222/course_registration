@@ -19,11 +19,11 @@ public class AdminStudentService {
         return false;
     }
 
-    public boolean modifyStudent(ProfessorDTO professorDTO) {
+    public boolean modifyStudent(AdminStudentDTO adminStudentDTO) {
         return false;
     }
 
-    public boolean deleteStudent(int professorCode) {
+    public boolean deleteStudent(int studentCode) {
         return false;
     }
 }
