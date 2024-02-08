@@ -38,6 +38,7 @@
         <mapper class="com.ohgiraffers.admin.professorManager.model.dao.ProfessorDAO"/>
         <mapper class="com.ohgiraffers.admin.studentManager.model.dao.StudentDAO"/>
         <mapper class="com.ohgiraffers.student.registManager.model.dao.RegistDAO"/>
+        <mapper class="com.ohgiraffers.student.login.model.dao.LoginDAO"/>
     </mappers>
 
 </configuration>
