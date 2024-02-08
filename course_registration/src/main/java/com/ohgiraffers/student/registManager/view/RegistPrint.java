@@ -31,6 +31,7 @@ public class RegistPrint {
             case "deleteOne" :
                 successMessage = "해당 강의를 취소했습니다.";
         }
+        System.out.println(successMessage);
 
     }
 
