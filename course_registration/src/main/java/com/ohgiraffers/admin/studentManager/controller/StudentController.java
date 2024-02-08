@@ -48,9 +48,9 @@ public class StudentController {
         }
     }
 
-    public void modifyStudent(ProfessorDTO professorDTO) {
+    public void modifyStudent(AdminStudentDTO adminStudentDTO) {
 
-        if(adminStudentService.modifyStudent(professorDTO)){
+        if(adminStudentService.modifyStudent(adminStudentDTO)){
             adminStudentPrint.printSuccessMessage("update");
         }else {
             adminStudentPrint.printErrorMessage("update");
