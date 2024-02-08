@@ -59,7 +59,7 @@ public class RegistMenu {
         return sc.nextInt();
     }
 
-    private Map<String, Object> registSubMenu() {
+    private Map<String, String> registSubMenu() {
         Scanner sc = new Scanner(System.in);
         do {
             System.out.println("========== 수강신청 =========");
@@ -69,7 +69,7 @@ public class RegistMenu {
             System.out.print("=> ");
             int selectMenu = sc.nextInt();
 
-            Map<String, Object> parameter = new HashMap<>();
+            Map<String, String> parameter = new HashMap<>();
 
             /* 1 or 2로 조회를 해 */
             switch (selectMenu){
@@ -84,7 +84,7 @@ public class RegistMenu {
     }
 
 
-    private Map<String, Object> inputSearchCondition(Map<String, Object> parameter) {
+    private Map<String, String> inputSearchCondition(Map<String, String> parameter) {
         Scanner sc = new Scanner(System.in);
         String option = "";
         String value = "";
@@ -139,7 +139,4 @@ public class RegistMenu {
         return parameter;
     }
 
-    private Object selectSubMenu() {
-
-    }
 }
