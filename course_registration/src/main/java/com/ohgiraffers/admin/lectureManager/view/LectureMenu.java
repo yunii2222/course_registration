@@ -119,6 +119,7 @@ public class LectureMenu {
         int lectureLimit = sc.nextInt();
         System.out.println("등록할 수업장소를 입력해주세요");
         System.out.print("=> ");
+        sc.nextLine();
         String lecturePlace = sc.nextLine();
         System.out.println("등록할 교수 코드를 입력해주세요");
         System.out.print("=> ");
@@ -128,6 +129,7 @@ public class LectureMenu {
         int classCode = sc.nextInt();
         System.out.println("등록할 개설학기를 입력해주세요");
         System.out.print("=> ");
+        sc.nextLine();
         String semester = sc.nextLine();
 
         ProfessorDTO professorDTO = new ProfessorDTO();
@@ -158,6 +160,7 @@ public class LectureMenu {
         int lectureLimit = sc.nextInt();
         System.out.println("수정할 수업장소를 입력해주세요");
         System.out.print("=> ");
+        sc.nextLine();
         String lecturePlace = sc.nextLine();
         System.out.println("수정할 교수 코드를 입력해주세요");
         System.out.print("=> ");
@@ -167,6 +170,7 @@ public class LectureMenu {
         int classCode = sc.nextInt();
         System.out.println("수정할 개설학기를 입력해주세요");
         System.out.print("=> ");
+        sc.nextLine();
         String semester = sc.nextLine();
 
         LectureDTO lectureDTO = new LectureDTO();
