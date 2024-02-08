@@ -3,6 +3,7 @@ package com.ohgiraffers.student.registManager.controller;
 
 import com.ohgiraffers.admin.lectureManager.model.dto.LectureDTO;
 import com.ohgiraffers.admin.studentManager.model.dto.AdminStudentDTO;
+import com.ohgiraffers.common.SearchCondition;
 import com.ohgiraffers.student.registManager.model.service.RegistService;
 import com.ohgiraffers.student.registManager.view.RegistPrint;
 
@@ -16,7 +17,11 @@ public class RegistController {
     private RegistPrint registPrint = new RegistPrint();
 
     public void selectLectureByCondition(Map<String, String> parameter){
-        List<LectureDTO> lectureList = registService.selectLectureByCondition(parameter);
+        SearchCondition searchCondition = new SearchCondition();
+        searchCondition.setOption(parameter.get("option"));
+        searchCondition.setValue(parameter.get("value"));
+
+        List<LectureDTO> lectureList = registService.selectLectureByCondition(searchCondition);
 
         if ( lectureList != null) {
             registPrint.printAllLectureList(lectureList);
@@ -26,8 +31,14 @@ public class RegistController {
     }
 
 
-    public void addNewRegist(int parameter, AdminStudentDTO student) {
-        boolean registrationSuccess = registService.addNewRegist(parameter, student);
+    public void addNewRegist(int lectureCode, AdminStudentDTO student) {
+        if(lectureCode == 0) {
+            registPrint.canclePrint("regist");
+            return;
+        }
+        int studentCode = student.getStudentCode();
+
+        boolean registrationSuccess = registService.addNewRegist(lectureCode, studentCode);
         registPrint.printMessage(registrationSuccess);
 
     }
@@ -45,12 +56,14 @@ public class RegistController {
     }
 
     public void deleteRegist(int lectureCode, AdminStudentDTO student) {
+        if(lectureCode == 0) {
+            registPrint.canclePrint("delete");
+            return;
+        }
 
         int studentCode = student.getStudentCode();
 
-        List<LectureDTO> lectureList = registService.deleteRegist(lectureCode, studentCode);
-
-        if(lectureList != null){
+        if(registService.deleteRegist(lectureCode, studentCode)){
             registPrint.printSuccessMessage("deleteOne");
         }else {
             registPrint.printErrorMessage("deleteOne");

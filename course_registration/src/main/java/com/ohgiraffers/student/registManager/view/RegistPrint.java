@@ -51,6 +51,12 @@ public class RegistPrint {
     }
 
 
-
-
+    public void canclePrint(String message) {
+        switch(message) {
+            case "regist":
+                System.out.println("어떤 강의도 신청하지 않았습니다."); break;
+            case "delete" :
+                System.out.println("어떤 강의도 삭제하지 않았습니다."); break;
+        }
+    }
 }

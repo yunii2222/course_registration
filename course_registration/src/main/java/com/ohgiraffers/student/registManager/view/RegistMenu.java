@@ -74,7 +74,7 @@ public class RegistMenu {
             /* 1 or 2로 조회를 해
             *    ㄴ네.. */
             switch (selectMenu){
-                case 1 : parameter.put("option", "all"); break;
+                case 1 : parameter.put("option", "all"); parameter.put("value", ""); break;
                 case 2 : inputSearchCondition(parameter); break;
                 default : System.out.println("잘못된 번호입니다. 확인 후 다시 입력해 주세요."); break;
             }
