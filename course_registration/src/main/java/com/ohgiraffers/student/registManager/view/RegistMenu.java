@@ -36,7 +36,7 @@ public class RegistMenu {
                 switch (selectMenu){
                     case 1 : break;
                     case 2 : break;
-                    case 63: System.out.println("========상위 메뉴로 이동합니다.========"); return;
+                    case 3: System.out.println("========상위 메뉴로 이동합니다.========"); return;
                     default : System.out.println("잘못된 번호입니다. 확인 후 다시 입력해 주세요."); break;
                 }
             } while (true);
