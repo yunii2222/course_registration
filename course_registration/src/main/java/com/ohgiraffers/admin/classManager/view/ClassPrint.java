@@ -28,6 +28,7 @@ public class ClassPrint {
                 errorMessage = "수업 삭제가 실패했습니다."; break;
 
         }
+        System.out.println(errorMessage);
     }
 
     public void printClassList(List<ClassDTO> classList, SearchCondition searchCondition) {

@@ -29,6 +29,7 @@ public class AdminStudentPrint {
                 errorMessage = "학생 삭제를 실패했습니다."; break;
 
         }
+        System.out.println(errorMessage);
 
     }
 

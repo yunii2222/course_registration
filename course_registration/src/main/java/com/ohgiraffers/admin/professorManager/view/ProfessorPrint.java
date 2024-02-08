@@ -29,6 +29,7 @@ public class ProfessorPrint {
                 errorMessage = "교수 삭제가 실패했습니다."; break;
 
         }
+        System.out.println(errorMessage);
     }
 
     public void printProfessorList(List<ProfessorDTO> professorList, SearchCondition searchCondition) {

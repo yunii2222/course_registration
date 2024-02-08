@@ -28,6 +28,8 @@ public class LecturePrint {
                 errorMessage = "강의 삭제를 실패했습니다"; break;
 
         }
+
+        System.out.println(errorMessage);
     }
 
     public void printLectureList(List<LectureDTO> lectureList, SearchCondition searchCondition) {
