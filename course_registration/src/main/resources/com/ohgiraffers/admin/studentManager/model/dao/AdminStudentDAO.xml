@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ohgiraffers.admin.studentManager.model.dao.AdminStudentDAO">
+
+    <select id="selectAllStudentList" resultType="AdminStudentDTO">
+        SELECT student_code, student_name, student_phone, student_grade, password, student_status, major_subject, tutor_professor
+        FROM tb_student
+        ORDER BY student_code
+    </select>
+
+    <select id="selectStudentByCondition" resultType="AdminStudentDTO">
+        SELECT student_code, student_name, student_phone, student_grade, password, student_status, major_subject, tutor_professor
+        FROM tb_student
+        <if test="option == 'subjectName'">
+            JOIN tb_subject on major_subject = subject_code
+        </if>
+        WHERE
+        <choose>
+            <when test="option == 'studentCode'">
+                student_code = #{value}
+            </when>
+            <when test="option == 'studentName'">
+                student_name LIKE CONCAT('%', #{value}, '%')
+            </when>
+            <when test="option == 'subjectName'">
+                subject_name LIKE CONCAT('%', #{value}, '%')
+            </when>
+            <when test="option == 'studentStatus'">
+                student_status = #{value}
+            </when>
+        </choose>
+        ORDER BY student_code
+    </select>
+
+    <insert id="insertStudent">
+        INSERT INTO tb_student (student_name, student_phone, student_grade, password, student_status, major_subject, tutor_professor)
+        VALUES (#{studentName}, #{studentPhone}, #{studentGrade}, #{password}, #{studentStatus}, #{majorSubject}, #{tutorProfessor})
+    </insert>
+
+    <update id="updateStudent">
+        UPDATE tb_student
+        <set>
+            <if test="studentName != null and studentName != 'SKIP'">
+                student_name = #{studentName},
+            </if>
+            <if test="studentPhone != null and studentPhone != 'SKIP'">
+                student_phone = #{studentPhone},
+            </if>
+            <if test="studentGrade != null and studentGrade != 'SKIP'">
+                student_grade = #{studentGrade},
+            </if>
+            <if test="password != null and password != 'SKIP'">
+                password = #{password},
+            </if>
+            <if test="studentStatus != null and studentStatus != 'SKIP'">
+                student_status = #{studentStatus},
+            </if>
+            <if test="majorSubject gt 0">
+                major_subject = #{majorSubject},
+            </if>
+            <if test="tutorProfessor gt 0">
+                tutor_professor = #{tutorProfessor},
+            </if>
+        </set>
+        WHERE student_code = #{studentCode}
+    </update>
+
+    <delete id="deleteStudent">
+        DELETE FROM tb_student
+        WHERE student_code = #{studentCode}
+    </delete>
+
+</mapper>
